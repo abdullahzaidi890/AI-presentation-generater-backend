@@ -21,7 +21,9 @@ class Settings(BaseSettings):
     request_timeout_seconds: float = 30.0
     max_upload_mb: int = 10
     max_context_chars: int = 24000
-    database_url: str = f"sqlite:///{(ROOT / 'data' / 'app.db').as_posix()}"
+    #database_url: str = f"sqlite:///{(ROOT / 'data' / 'app.db').as_posix()}"
+    database_url: str = "sqlite:////tmp/app.db"
+      
     frontend_origin: str = "http://localhost:5173"
 
     def key_for(self, provider: str) -> str:
